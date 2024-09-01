@@ -1,0 +1,124 @@
+link[rel="icon"] {
+    border-radius: 50%;
+  }
+
+#appname{
+    background-color:rgb(58, 222, 58);
+    border-radius:5px; 
+    height: 15vh ;
+    padding-top:4px;
+    padding-left: 0em;
+}
+
+.image{
+    border-radius: 40%; 
+    margin:4px;
+    float:left;
+}
+.tittle{
+    margin-left: 5px;
+    color:rgb(163, 71, 55);
+    float:left;
+}
+#logout{
+    float:right;
+    border: none;
+    background-color:rgb(58, 222, 58) ;
+    padding-right:1px;
+    margin-right:0;
+    margin-top: 4px;
+    margin-bottom: 0;
+    color: rgb(122, 24, 227);
+    font-weight: 400;
+
+}
+.chat-section{
+    height:84.5vh;
+    padding:0;
+    margin:0;
+}
+.massageArea{
+    background-color:#f4f4d5f9;
+      height: 92%;
+      overflow-y:auto;
+      margin:0;
+}
+.massage{
+    position: relative;
+    margin-top:25px;
+    padding: 0;   
+}
+
+.massage .incomingUser{
+    position: absolute;
+    top:-13px;
+    left:0;
+    font-size: x-small;
+    margin:0;
+    color: rgb(87, 80, 80);
+}
+.massage .outgoingUser{
+    position: absolute;
+    top:-13px;
+    left:0;
+    font-size: x-small;
+    margin:0;
+    color: rgb(87, 80, 80);
+}
+.massage p{
+    text-align: center;
+    margin-top:3px;
+    padding:5px 10px 0px 10px ;
+}
+.incoming{
+    margin-left:2%;
+    background-color:rgb(76, 64, 241);
+    max-width:350px;
+    min-width: 50px;
+    
+    border-radius:5px;
+    margin-right:auto;
+    color: rgb(210, 213, 214);
+    
+}
+.outgoing{
+    margin-right:2%;
+    float:right;
+    text-align:right;
+    max-width:350px;
+    min-width: 50px;
+    margin-left:auto;
+    border-radius:5px;
+    background-color:rgba(247, 15, 197, 0.409);
+    color:rgb(38, 22, 40);
+    
+    
+}
+.inputText{
+    height:1%;
+    margin:0;
+    padding:0;
+}
+#intext{
+    padding:6px;
+    background-color:#f7fcfbf9;
+}
+.massbtn{
+    margin:0px;
+    padding:6px 15px;
+    border-radius:5% ;
+    background-color:#188e6df9;
+}
+
+
+
+/* intdex */
+.indexbody{
+    background-color:rgba(157, 207, 192, 0.42);
+    width:100vw;
+    height:100vh;
+}
+.text-form{
+    padding-top:10rem;
+}
+

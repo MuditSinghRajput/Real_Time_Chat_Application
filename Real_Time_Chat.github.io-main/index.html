@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Real-Time Chat</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/avif" href="icon.avif">
+    
+    <style>
+      body {
+        background: url('./chat-background.jpg') no-repeat center center fixed; /* Adjust path as needed */
+        background-size: cover;
+        font-family: 'Arial', sans-serif;
+      }
+      .indexbody {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: rgba(0, 0, 0, 0.7); /* Dark overlay for better contrast */
+      }
+      .text-form {
+        background-color: white;
+        padding: 30px;
+        border-radius: 15px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        max-width: 400px;
+        width: 100%;
+      }
+      .form-label {
+        color: #570505;
+        font-weight: bold;
+      }
+      .form-control {
+        border-radius: 10px;
+      }
+      .btn-primary {
+        background-color: #570505;
+        border: none;
+        border-radius: 10px;
+        width: 100%;
+        padding: 10px;
+      }
+      .btn-primary:hover {
+        background-color: #720606;
+      }
+      .inRoom {
+        border-radius: 10px;
+        padding: 10px;
+        width: 100%;
+      }
+      .login-icon {
+        font-size: 24px;
+        margin-right: 10px;
+      }
+    </style>
+  </head>
+  <body class="indexbody">
+    <div class="text-form d-flex justify-content-center align-items-center">
+        <form id="loginForm" action="#">
+            <div class="mb-3">
+              <label for="exampleInputUserName" class="form-label">
+                <i class="login-icon bi bi-person"></i>User Name *</label>
+              <input type="text" class="form-control" placeholder="Enter your username" id="exampleInputUserName" aria-describedby="emailHelp" aria-required="true">
+            </div>
+            <div class="mb-3">
+              <label for="inputRoom" class="form-label">
+                <i class="login-icon bi bi-door-open"></i>Room</label>
+              <select name="inputRoom" id="inputRoom" class="inRoom">
+                <option value="0">Select Room</option>
+                <option value="1">Room1</option>
+                <option value="2">Room2</option>
+                <option value="3">Room3</option>
+                <option value="4">Room4</option>
+                <option value="5">Room5</option>
+                <option value="6">Room6</option>
+                <option value="7">Room7</option>
+              </select>
+            </div>
+            <button id="exampleBtn" class="btn btn-primary my-3">Submit</button>
+        </form>
+    </div>
+
+    <script>
+      document.getElementById('exampleBtn').addEventListener('click', (event) => {
+        event.preventDefault(); // Prevent the form from submitting
+
+        var username = document.getElementById('exampleInputUserName').value;
+
+        if(username == "") {
+          alert("Please fill in the Username!");
+          window.location.href = '/';
+        }
+
+        var room = document.getElementById('inputRoom').value;
+
+        // Store the username and room in session storage
+        sessionStorage.setItem('username', username);
+        sessionStorage.setItem('room', room);
+
+        if(username != "") window.location.href = '/chat';
+      });
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+    <script src="/socket.io/socket.io.js"></script>
+  </body>
+</html>
